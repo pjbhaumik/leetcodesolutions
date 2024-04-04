@@ -18,3 +18,21 @@ class Solution(object):
             _max = max(_max, counter)
             
         return _max
+    
+# Alternative
+class Solution(object):
+    def maxDepth(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        
+        _map = {'(':1, ')':-1}
+        _str = [_map[x] for x in list(s) if x in ['(', ')']]
+
+        _max = 0
+        
+        for i in range(len(_str)):
+            _max = max(_max, sum(_str[:i+1]))
+            
+        return _max
