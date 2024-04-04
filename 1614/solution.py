@@ -4,7 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        _str = list(s)
+        _str = [x for x in list(s) if x in ['(', ')']]
         counter = 0
         _max = 0
         
